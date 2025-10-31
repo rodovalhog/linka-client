@@ -64,13 +64,13 @@ export default function LinkCard({ product }: { product: LinkCardProps }) {
           )}
         </div>
         <div className="flex items-baseline space-x-3 mt-2">
-          <p className="text-2xl font-semibold text-gray-400 line-through">
+          <p className="text-xl font-semibold text-gray-400 line-through">
             {originalPrice}
           </p>
          {originalPrice && <p className="text-3xl font-bold text-green-600">
             {price}
           </p>}
-          {originalPrice ? <p className="text-sm font-medium text-gray-600 bg-green-50 px-2 py-1 rounded-md">
+          {originalPrice ? <p className="text-sm font-medium text-green-600 bg-green-50 px-2 py-1 rounded-md">
             {discount}
           </p> : <p className="text-4xl font-medium text-green-600 bg-green-50 px-2 py-1 rounded-md">
             {discount}

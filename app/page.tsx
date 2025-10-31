@@ -9,7 +9,7 @@ process.env.NODE_ENV === 'production'
     ? `https://linka-client.vercel.app`
     : 'http://localhost:3000';
 
-const res = await fetch(`${baseUrl}/api/products`, {
+const res = await fetch(`${baseUrl}/api/last-products`, {
   cache: 'no-store',
 });
 
@@ -26,7 +26,7 @@ const res = await fetch(`${baseUrl}/api/products`, {
           height={100}
           className="rounded-full border-4 border-pink-400 shadow-lg"
         />
-        <h1 className="text-2xl font-semibold mt-4">Casal Achadinhos 💸</h1>
+        <h1 className="text-2xl font-semibold mt-4">Loris & Gui Achadinhos 💸</h1>
         <p className="text-gray-600 text-sm mt-1">
           O casal que ama economizar e te mostra as melhores promoções do dia!
         </p>
@@ -43,7 +43,7 @@ const res = await fetch(`${baseUrl}/api/products`, {
       </div>
 
       <footer className="mt-10 text-xs text-gray-400">
-        © {new Date().getFullYear()} Casal Achadinhos
+        © {new Date().getFullYear()} Loris & Gui Achadinhos
       </footer>
     </main>
   );
