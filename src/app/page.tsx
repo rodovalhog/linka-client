@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Product } from "@/src/db/product";
 import LinkCard from "../componets/LinkCard";
 
 export default async function Page() {
