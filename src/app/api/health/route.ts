@@ -5,6 +5,7 @@ export async function GET() {
   const mustHave = [
     'NEXT_PUBLIC_BASE_URL',
     'MELI_ACCESS_TOKEN',
+    process.env.DATABASE_URL
     // adicione as que você realmente usa
   ];
   const status = Object.fromEntries(
