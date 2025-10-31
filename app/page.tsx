@@ -6,7 +6,7 @@ export default async function Page() {
 
   const baseUrl =
 process.env.NODE_ENV === 'production'
-    ? `https://linka-client-git-main-rodovalhogs-projects.vercel.app`
+    ? `https://linka-client.vercel.app`
     : 'http://localhost:3000';
 
 const res = await fetch(`${baseUrl}/api/products`, {
