@@ -8,7 +8,7 @@ export default async function Page() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/api/products`, {
     cache: 'no-store',
   });
-  const products: Product[] = await res.json();
+  const products: LinkCardProps[] = await res.json();
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-start bg-linear-to-b from-rose-100 via-white to-pink-50 text-gray-900 p-6">
@@ -27,7 +27,7 @@ export default async function Page() {
       </div>
 
       <div className="w-full max-w-md mt-8 space-y-4">
-        {products.map((product) => {
+        {products.map((product: LinkCardProps) => {
 
           console.log("product", product)
           return (
@@ -41,4 +41,19 @@ export default async function Page() {
       </footer>
     </main>
   );
+}
+
+
+interface LinkCardProps {
+  createdAt: string
+  description: string
+  discount: string
+  id: string
+  image: string
+  name: string
+  originalPrice: string
+  price: string
+  tag: string
+  updatedAt: string
+  url: string
 }

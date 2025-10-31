@@ -17,7 +17,7 @@ interface LinkCardProps {
   url: string
 }
 
-export default function LinkCard({ product }: LinkCardProps) {
+export default function LinkCard({ product }: { product: LinkCardProps }) {
   const {
     createdAt,
     description,
