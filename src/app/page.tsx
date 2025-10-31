@@ -1,3 +1,4 @@
+export const runtime = 'nodejs';
 import Image from "next/image";
 import LinkCard from "../componets/LinkCard";
 
