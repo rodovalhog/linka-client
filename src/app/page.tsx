@@ -1,11 +1,12 @@
 export const runtime = 'nodejs';
 import Image from "next/image";
 import LinkCard from "../componets/LinkCard";
+import { getBaseUrl } from "../utils/base-url";
 
 export default async function Page() {
 
   // Busca os produtos da API (lado do servidor)
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/api/products`, {
+  const res = await fetch(`${getBaseUrl()}/api/products`, {
     cache: 'no-store',
   });
   const products: LinkCardProps[] = await res.json();
