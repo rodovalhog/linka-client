@@ -5,9 +5,8 @@ import Image from "next/image";
 export default async function Page() {
 
   const baseUrl =
-  process.env.NEXT_PUBLIC_BASE_URL ||
-  process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
+process.env.NODE_ENV === 'production'
+    ? `https://linka-client-git-main-rodovalhogs-projects.vercel.app`
     : 'http://localhost:3000';
 
 const res = await fetch(`${baseUrl}/api/products`, {
