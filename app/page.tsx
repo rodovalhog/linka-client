@@ -4,16 +4,17 @@ import Image from "next/image";
 
 export default async function Page() {
 
-  function getBaseUrl() {
-    // Em produção na Vercel → usa o domínio do deploy
-    if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
-    // Em dev → localhost
-    return 'http://localhost:3000';
-  }
+  const baseUrl =
+  process.env.NEXT_PUBLIC_BASE_URL ||
+  process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : 'http://localhost:3000';
 
-  const res = await fetch(`${getBaseUrl()}/api/products`, {
-    cache: 'no-store',
-  });
+const res = await fetch(`${baseUrl}/api/products`, {
+  cache: 'no-store',
+});
+
+
   const products: LinkCardProps[] = await res.json();
 
   return (
